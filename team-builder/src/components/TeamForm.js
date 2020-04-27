@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
+
+const InputBox = styled.div`
+display: flex;
+flex-direction: column;
+`;
+
 
 const TeamForm = ({ addNewTeam }) => {
   
@@ -17,6 +24,7 @@ const TeamForm = ({ addNewTeam }) => {
     setTm({ name: "", class: "", weapon: "" });
   };
   return (
+    <InputBox>
     <form onSubmit={submitForm}>
       
       <label htmlFor="name">Name</label>
@@ -44,16 +52,17 @@ const TeamForm = ({ addNewTeam }) => {
       <label htmlFor="weapon">Weapon</label>
       
       <input
-        id="weapon"
+        id="role"
         type="text"
         placeholder="Enter Weapon"
         value={tm.weapon}
-        name="weapon"
+        name="role"
         onChange={handleChanges}
       />
 
       <button type="submit">Add Party Member</button>
     </form>
+    </InputBox>
   );
 };
 

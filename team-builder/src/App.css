@@ -1,3 +1,9 @@
+body {
+  background: black;
+  color: grey;
+  font-family: 'Indie Flower', cursive;
+}
+
 .App {
   text-align: center;
 }

@@ -1,7 +1,32 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
+
+const Card = styled.div`
+background: #224488;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+border-radius: 20px;
+margin-bottom: 2%;
+`;
+
+const InputBox = styled.form`
+background: black;
+border: 2px solid grey;
+width: 200px;
+display: flex;
+flex-direction: column;
+margin: 0;
+justify-content: center;
+color: white;
+font-family: 'Neucha', cursive;
+`;
+
 
 const Form = ({ addNewTeam }) => {
   
+  
+
   const [tm, setTm] = useState({ name: "", email: "", role: "" });
 
   const handleChanges = event => {
@@ -17,7 +42,8 @@ const Form = ({ addNewTeam }) => {
     setTm({ name: "", email: "", role: "" });
   };
   return (
-    <form onSubmit={submitForm}>
+    <Card>
+    <InputBox onSubmit={submitForm}>
       
       <label htmlFor="name">Name</label>
       
@@ -53,7 +79,8 @@ const Form = ({ addNewTeam }) => {
       />
 
       <button type="submit">Add Party Member</button>
-    </form>
+    </InputBox>
+    </Card>    
   );
 };
 
